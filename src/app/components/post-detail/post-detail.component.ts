@@ -31,7 +31,7 @@ export class PostDetailComponent implements OnInit {
     });
   }
 
-  getMapUrl(longitude: number, latitude: number): string {
+  getMapUrl(longitude: string, latitude: string): string {
     return (
       this.mapUrl +
       latitude +

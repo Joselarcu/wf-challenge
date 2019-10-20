@@ -30,7 +30,7 @@ export class PostListComponent implements OnInit {
     public postService: PostService,
     public router: Router,
     private datePipe: DatePipe,
-    private confirmationModalService: ConfirmationModalService,
+    public confirmationModalService: ConfirmationModalService,
     private alertService: AlertService
   ) {
     postService.getPosts().subscribe(response => {
