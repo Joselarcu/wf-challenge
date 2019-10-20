@@ -1,0 +1,21 @@
+<div *ngIf="post">
+  <h1>
+    {{ post.title }}
+    <button type="button" class="btn btn-primary" (click)="editPost(post.id)">
+      <i class="fa fa-pencil"></i>Edit
+    </button>
+  </h1>
+
+  <small>{{ post.created_at | date: "dd/MM/yyyy" }}</small>
+
+  <p>{{ post.content }}</p>
+
+  <div class="row">
+    <div class="col">
+      <img [src]="post.image_url" />
+    </div>
+    <div class="col">
+      <img [src]="getMapUrl(post.lat, post.long)" />
+    </div>
+  </div>
+</div>

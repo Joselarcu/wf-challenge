@@ -1,0 +1,18 @@
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col" *ngFor="let column of tableHeader">{{column.label}}</th>
+      <th scope="col" *ngIf="action1.observers.length > 0">Delete</th>
+      <th scope="col" *ngIf="action2.observers.length > 0">Detail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of rows; let i = index">
+      <td scope="row" *ngFor="let column of tableHeader"> {{row[column.selector]}}</td>
+      <td (click)="executeFirstAction(i)" class="action" *ngIf="action1.observers.length > 0"><i class="fa fa-trash"></i></td>
+      <td class="action" (click)="executeSecondAction(row)" *ngIf="action2.observers.length > 0"><i class="fa fa-book"></i></td>
+    </tr>
+  </tbody>
+</table>
+
+
