@@ -1,0 +1,8 @@
+<h1>Posts list</h1>
+
+<wf-table [tableHeader]="tableHeader" [rows]="rows" (action1)= "deletePost($event)" (action2)="goToDetail($event)"></wf-table>
+
+<wf-confirmation-modal title="Delete post" message="Are you sure you want to delete this post?" (confirmAction)="confirmDeletePost()" [(isVisible)] ="confirmationModalService.modalVisible"></wf-confirmation-modal>
+
+<button type="button" class="btn btn-success" (click)="goToCreatePostView(template)">Add Post</button>
+

@@ -1,0 +1,9 @@
+<div class="alert-container" *ngIf="visibleMessage">
+  <div class="alert alert-dismissible" 
+  [ngClass]="{'alert-success': type === 'success', 'alert-danger': type === 'error'}">
+    <a (click)="close()" class="close" data-dismiss="alert" aria-label="close"
+      >&times;</a
+    >
+    <strong>{{(type === 'success') ? 'Success!' : 'Error!'}}</strong> {{message}}
+  </div>
+
